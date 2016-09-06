@@ -1,6 +1,7 @@
 package sparkApp
 
 import breeze.linalg.{Vector, DenseVector}
+import org.apache.spark.rdd.RDD
 import org.apache.spark.storage.StorageLevel
 import org.apache.spark.{SparkContext, SparkConf}
 import sparkApp.SparkLR.DataPoint
@@ -25,16 +26,7 @@ object SparkLRSer {
     val sc = new SparkContext(sparkConf)
     val length = args(3).toInt
     val numPartitions = args(1).toInt
-    val points = sc.textFile(args(0)).repartition(numPartitions).map{line =>
-      val parts = line.split(" ")
-      val y = parts(0).toDouble
-      val data = new Array[Double](parts.length-1)
-      for(i <- 1 until parts.length){
-        data(i-1) = parts(i).toDouble
-      }
-      val x = DenseVector(data)
-      new DataPoint(x,y)
-    }.persist(StorageLevel.MEMORY_AND_DISK_SER)
+    val points = sc.objectFile(args(0)).asInstanceOf[RDD[DataPoint]].persist(StorageLevel.MEMORY_AND_DISK_SER)
 
     points.foreach(x => Unit)
     val iterations = args(2).toInt

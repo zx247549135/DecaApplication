@@ -50,7 +50,7 @@ class PointChunk(dimensions: Int,size: Int = 4196)
         //transform to values
         i=0
         while (i < dimensions) {
-          currentPoint(i) *= (1 / (1 + exp(-y * dotvalue)) - 1) * y
+          currentPoint(i) *= (1 / (1 + Math.exp(-y * dotvalue)) - 1) * y
           i += 1
         }
         currentPoint.clone()
