@@ -1,9 +1,8 @@
 package decaApp
 
-import java.io.{DataOutputStream, ByteArrayOutputStream}
+import java.io.DataOutputStream
 
 import breeze.linalg.DenseVector
-import org.apache.hadoop.io.WritableComparator
 import org.apache.spark.{SparkContext, SparkConf}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.storage.StorageLevel
@@ -12,88 +11,105 @@ import sparkApp.SparkLR
 import scala.util.Random
 
 /**
-  * Created by zx on 2016/4/27.
+  * Created by iceke on 16/9/12.
   */
 
-class PointChunk(dimensions: Int,size: Int = 4196)
-  extends ByteArrayOutputStream(size)
-    with Serializable { self =>
+class UnsafeChunk(dimensions: Int,size: Long = 4196)
+extends Serializable
+{self=>
+  import UnsafeLR._
+  private val baseAddress = UNSAFE.allocateMemory(size)
+  private var curAddress = baseAddress
+  def address = baseAddress
+  def free:Unit={
+    UNSAFE.freeMemory(baseAddress)
+  }
+
+  def writeDouble(num:Double):Unit={
+    UNSAFE.putDouble(curAddress,num)
+    curAddress+=8
+  }
 
 
-  def show():Unit={
-    var address = 0
-    while(address<size){
-      println(WritableComparator.readDouble(buf, address))
-      address+=8
-    }
+   def show():Unit={
+     var address = baseAddress
+     while(address<curAddress){
+     //  println(UNSAFE.getDouble(address))
+       address+=8
+     }
 
   }
 
+
   def getVectorValueIterator(w: Array[Double]) = new Iterator[Array[Double]] {
-    var offset = 0
-    var currentPoint=new Array[Double](dimensions)
+    var offset = baseAddress
+    var currentPoint = new Array[Double](dimensions)
     var i = 0
     var y = 0.0
-    var dotvalue = 0.0
-
-    override def hasNext = offset < self.count
+    var dotValue = 0.0
+    override def hasNext = offset<self.curAddress
 
     override def next() = {
-      if (!hasNext) Iterator.empty.next()
-      else {
-        //read data from the chunk
-        i=0
-        while (i < dimensions) {
-          currentPoint(i)= WritableComparator.readDouble(buf, offset)
+      if(!hasNext) Iterator.empty.next()
+      else{
+        //read data from chunk
+        i = 0
+        while(i<dimensions){
+          currentPoint(i) = UNSAFE.getDouble(offset)
           offset += 8
           i += 1
         }
-        y = WritableComparator.readDouble(buf, offset)
+        y = UNSAFE.getDouble(offset)
         offset += 8
-        //calculate the dot value
+
+        //caculate the dot value
         i=0
-        dotvalue = 0.0
-        while (i < dimensions) {
-          dotvalue += w(i)*currentPoint(i)
+        dotValue = 0.0
+        while(i<dimensions) {
+          dotValue += w(i) * currentPoint(i)
           i += 1
         }
         //transform to values
-        i=0
-        while (i < dimensions) {
-          currentPoint(i) *= (1 / (1 + Math.exp(-y * dotvalue)) - 1) * y
-          i += 1
+        i = 0
+        while(i < dimensions){
+          currentPoint(i) *= (1 / (1 + Math.exp(-y * dotValue)) - 1) * y
+          i+=1
         }
         currentPoint.clone()
       }
+
     }
   }
-}
-/**
-  * Logistic regression based classification.
-  * Usage: SparkLR [slices]
-  *
-  * This is an example implementation for learning how to use Spark. For more conventional use,
-  * please refer to either org.apache.spark.mllib.classification.LogisticRegressionWithSGD or
-  * org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS based on your needs.
-  */
 
-object DecaLR {
+
+
+
+}
+
+
+object UnsafeLR{
   val rand = new Random(42)
+  final val UNSAFE = {
+    val unsafeField = classOf[sun.misc.Unsafe].getDeclaredField("theUnsafe")
+    unsafeField.setAccessible(true)
+    unsafeField.get().asInstanceOf[sun.misc.Unsafe]
+  }
 
   def testOptimized(points: RDD[SparkLR.DataPoint],iterations:Int,numDests:Int,w:DenseVector[Double]): Unit = {
     val cachedPoints = points.mapPartitions ({ iter =>
       val (iterOne ,iterTwo) = iter.duplicate
-      val chunk = new PointChunk(numDests,8*iterOne.length*(1+numDests))
-      val dos = new DataOutputStream(chunk)
+      val chunk = new UnsafeChunk(numDests,8*iterOne.length*(1+numDests))
+
       for (point <- iterTwo) {
-        point.x.foreach(dos.writeDouble)
-        dos.writeDouble(point.y)
+        point.x.foreach(chunk.writeDouble)
+        chunk.writeDouble(point.y)
       }
       chunk.show()
+
       Iterator(chunk)
     },true).persist(StorageLevel.MEMORY_AND_DISK)
 
-    cachedPoints.foreach(x => println)
+    cachedPoints.foreach(x => Unit)
 
     val w_op=new Array[Double](numDests)
     for(i <- 0 until numDests)
@@ -104,6 +120,7 @@ object DecaLR {
       println("On iteration " + i)
       val gradient= cachedPoints.mapPartitions{ iter =>
         val chunk = iter.next()
+
         chunk.getVectorValueIterator(w_op)
       }.reduce{(lArray, rArray) =>
         val result_array=new Array[Double](lArray.length)
@@ -129,7 +146,6 @@ object DecaLR {
     val iterations = args(1).toInt
     val numDests = args(2).toInt
     val points = sc.objectFile(args(0)).asInstanceOf[RDD[SparkLR.DataPoint]]
-
     points.foreach(println)
 
     val w = DenseVector.fill(numDests){2*rand.nextDouble() - 1}
@@ -142,5 +158,4 @@ object DecaLR {
 
     sc.stop()
   }
-
 }

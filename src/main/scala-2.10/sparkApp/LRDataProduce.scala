@@ -23,7 +23,7 @@ object LRDataProduce {
   }
 
   def main(args:Array[String]){
-    val sparkConf = new SparkConf().setAppName("LRDataProduce")
+    val sparkConf = new SparkConf().setAppName("LRDataProduce").setMaster("local");
     val sc = new SparkContext(sparkConf)
     val numDest = args(0).toInt
     val numSimplesEach = args(1).toInt
