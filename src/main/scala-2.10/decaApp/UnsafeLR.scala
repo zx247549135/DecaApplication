@@ -141,7 +141,7 @@ object UnsafeLR{
 
   def main(args: Array[String]) {
 
-    val sparkConf = new SparkConf().setAppName(args(3)).setMaster("local")
+    val sparkConf = new SparkConf().setAppName(args(3))
     val sc = new SparkContext(sparkConf)
     val iterations = args(1).toInt
     val numDests = args(2).toInt
