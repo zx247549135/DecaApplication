@@ -152,7 +152,7 @@ object UnsafePR{
   }
 
   def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName(args(2)).setMaster("local");
+    val conf = new SparkConf().setAppName(args(2))
     val spark = new SparkContext(conf)
 
     //Logger.getRootLogger.setLevel(Level.FATAL)
