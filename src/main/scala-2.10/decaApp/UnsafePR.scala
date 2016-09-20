@@ -152,6 +152,7 @@ object UnsafePR{
   }
 
   def main(args: Array[String]) {
+    println("directmemory: "+sun.misc.VM.maxDirectMemory())
     val conf = new SparkConf().setAppName(args(2))
     val spark = new SparkContext(conf)
 
