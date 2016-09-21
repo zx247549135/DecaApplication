@@ -60,8 +60,10 @@ class UnsafeEdge (size: Int = 4196){self =>
       var matched = false
       while (!matched && vertices.hasNext) {
         val currentVertex = vertices.next()
+        if (offset >= self.curAddress) return false
         while (currentVertex._1 > UNSAFE.getInt(offset)) {
           offset += 4
+          if (offset >= self.curAddress) return false
           val numDests = UNSAFE.getInt(offset)
           offset += 4 + 4 * numDests
 
@@ -70,6 +72,8 @@ class UnsafeEdge (size: Int = 4196){self =>
         if (currentVertex._1 == UNSAFE.getInt(offset)) {
           matched = true
           offset += 4
+
+          if (offset >= self.curAddress) return false
           currentDestNum = UNSAFE.getInt(offset)
           offset += 4
           currentDestIndex = 0
