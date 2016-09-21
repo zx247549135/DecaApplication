@@ -144,7 +144,7 @@ object DecaPR {
   }
 
   def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName(args(2))
+    val conf = new SparkConf().setAppName(args(2)).setMaster("local")
     val spark = new SparkContext(conf)
 
     //Logger.getRootLogger.setLevel(Level.FATAL)

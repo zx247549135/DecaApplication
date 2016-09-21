@@ -104,7 +104,6 @@ object UnsafeLR{
         point.x.foreach(chunk.writeDouble)
         chunk.writeDouble(point.y)
       }
-      chunk.show()
 
       Iterator(chunk)
     },true).persist(StorageLevel.MEMORY_AND_DISK)
@@ -131,7 +130,7 @@ object UnsafeLR{
 
       for(i <- 0 to numDests-1)
         w_op(i) = w_op(i) - gradient(i)
-      println("w is :"+w_op.mkString(";"))
+     // println("w is :"+w_op.mkString(";"))
     }
     val duration = System.currentTimeMillis - startTime
     println("result:"+w_op.mkString(";"))
@@ -146,7 +145,7 @@ object UnsafeLR{
     val iterations = args(1).toInt
     val numDests = args(2).toInt
     val points = sc.objectFile(args(0)).asInstanceOf[RDD[SparkLR.DataPoint]]
-    points.foreach(println)
+    //points.foreach(println)
 
     val w = DenseVector.fill(numDests){2*rand.nextDouble() - 1}
     println("Initial w:"+w)
