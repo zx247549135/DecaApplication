@@ -28,12 +28,14 @@ class UnsafeEdge (size: Int = 4196){self =>
 
 
   def show(): Unit ={
+    println("!!!!!!!!!!!!baseAddress is" + baseAddress)
+    println("!!!!!!!!!!!!curAddress is" + curAddress)
 
   }
 
   def getInitValueIterator(value: Float) = new Iterator[(Int, Float)] {
     var offset = baseAddress
-    println("!!!!!!!!!!!!baseAddress is" + baseAddress)
+
 
     override def hasNext = offset < self.curAddress
 
@@ -93,14 +95,14 @@ class UnsafeEdge (size: Int = 4196){self =>
         currentDestIndex += 1
         if (currentDestIndex == currentDestNum) changeVertex = true
 
-        if(offset >= self.curAddress) {
+        if(offset > self.curAddress) {
+          println("!!!!!!offset is "+offset+"  curAddrss is "+curAddress)
+        }
           val destId = UNSAFE.getInt(offset)
           offset += 4
 
           (destId, currentContrib)
-        }else{
-          null
-        }
+
       }
     }
 
@@ -133,8 +135,11 @@ object UnsafePR{
         chunk.writeInt(dests.size)
         dests.foreach(chunk.writeInt)
       }
+      chunk.show()
       Iterator(chunk)
     }, true).cache()
+
+
 
     cachedEdges.foreach(_ => Unit)
 
