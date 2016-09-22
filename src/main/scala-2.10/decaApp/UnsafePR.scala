@@ -12,6 +12,9 @@ import org.apache.spark.{SparkContext, SparkConf}
 class UnsafeEdge (size: Int = 4196){self =>
   import UnsafePR._
   private val baseAddress = UNSAFE.allocateMemory(size)
+
+  println("!!!!!!!!!!!!baseAddress is" + baseAddress)
+
   private var curAddress = baseAddress
   def address = baseAddress
   def free:Unit={
@@ -30,6 +33,7 @@ class UnsafeEdge (size: Int = 4196){self =>
 
   def getInitValueIterator(value: Float) = new Iterator[(Int, Float)] {
     var offset = baseAddress
+    println("!!!!!!!!!!!!baseAddress is" + baseAddress)
 
     override def hasNext = offset < self.curAddress
 
@@ -60,10 +64,8 @@ class UnsafeEdge (size: Int = 4196){self =>
       var matched = false
       while (!matched && vertices.hasNext) {
         val currentVertex = vertices.next()
-        if (offset >= self.curAddress) return false
         while (currentVertex._1 > UNSAFE.getInt(offset)) {
           offset += 4
-          if (offset >= self.curAddress) return false
           val numDests = UNSAFE.getInt(offset)
           offset += 4 + 4 * numDests
 
@@ -72,8 +74,6 @@ class UnsafeEdge (size: Int = 4196){self =>
         if (currentVertex._1 == UNSAFE.getInt(offset)) {
           matched = true
           offset += 4
-
-          if (offset >= self.curAddress) return false
           currentDestNum = UNSAFE.getInt(offset)
           offset += 4
           currentDestIndex = 0
@@ -93,15 +93,19 @@ class UnsafeEdge (size: Int = 4196){self =>
         currentDestIndex += 1
         if (currentDestIndex == currentDestNum) changeVertex = true
 
-        val destId = UNSAFE.getInt(offset)
-        offset += 4
+        if(offset >= self.curAddress) {
+          val destId = UNSAFE.getInt(offset)
+          offset += 4
 
-        (destId, currentContrib)
+          (destId, currentContrib)
+        }else{
+          null
+        }
       }
     }
 
-  }
 
+  }
 
 }
 
