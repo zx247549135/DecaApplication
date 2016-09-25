@@ -168,6 +168,7 @@ object UnsafePR{
         setKeyOrdering(ordering).
         asInstanceOf[RDD[(Int, Float)]].
         mapValues(0.15f + 0.85f * _)
+      println("ranks finished!!!!!!!!!!!!!")
     }
     ranks.saveAsTextFile(save)
 
