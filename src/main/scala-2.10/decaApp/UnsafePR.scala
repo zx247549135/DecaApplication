@@ -33,7 +33,7 @@ class UnsafeEdge (size: Int = 4196){self =>
     var address = baseAddress
 
     while(address < curAddress){
-      println(UNSAFE.getInt(address))
+      var a = UNSAFE.getInt(address)
       address+=4
     }
 
