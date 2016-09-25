@@ -106,6 +106,8 @@ class UnsafeEdge (size: Int = 4196){self =>
           val destId = UNSAFE.getInt(offset)
           offset += 4
 
+          println("offset!!!!!!"+offset)
+
           (destId, currentContrib)
 
       }
@@ -155,7 +157,7 @@ object UnsafePR{
 
     var ranks = initRanks
 
-    println("initRanks finished!!!!!!!!!!!!!")
+    //println("initRanks finished!!!!!!!!!!!!!")
 
     for (i <- 1 to iters) {
       val contribs = cachedEdges.zipPartitions(ranks) { (EIter, VIter) =>
@@ -163,12 +165,12 @@ object UnsafePR{
         chunk.getMessageIterator(VIter)
       }
 
-      println("contribs finished!!!!!!!!!!!!!")
+      //println("contribs finished!!!!!!!!!!!!!")
       ranks = contribs.reduceByKey(cachedEdges.partitioner.get, _ + _).asInstanceOf[ShuffledRDD[Int, _, _]].
         setKeyOrdering(ordering).
         asInstanceOf[RDD[(Int, Float)]].
         mapValues(0.15f + 0.85f * _)
-      println("ranks finished!!!!!!!!!!!!!")
+      //println("ranks finished!!!!!!!!!!!!!")
     }
     ranks.saveAsTextFile(save)
 
