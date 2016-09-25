@@ -155,11 +155,15 @@ object UnsafePR{
 
     var ranks = initRanks
 
+    println("initRanks finished!!!!!!!!!!!!!")
+
     for (i <- 1 to iters) {
       val contribs = cachedEdges.zipPartitions(ranks) { (EIter, VIter) =>
         val chunk = EIter.next()
         chunk.getMessageIterator(VIter)
       }
+
+      println("contribs finished!!!!!!!!!!!!!")
       ranks = contribs.reduceByKey(cachedEdges.partitioner.get, _ + _).asInstanceOf[ShuffledRDD[Int, _, _]].
         setKeyOrdering(ordering).
         asInstanceOf[RDD[(Int, Float)]].
