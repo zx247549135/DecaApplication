@@ -30,6 +30,15 @@ class UnsafeEdge (size: Int = 4196){self =>
   def show(): Unit ={
     println("!!!!!!!!!!!!baseAddress is" + baseAddress)
     println("!!!!!!!!!!!!curAddress is" + curAddress)
+    var address = baseAddress
+
+    while(address < curAddress){
+      println(UNSAFE.getInt(address))
+      address+=4
+    }
+
+    println("read complete!!!")
+
 
   }
 
@@ -94,10 +103,6 @@ class UnsafeEdge (size: Int = 4196){self =>
       else {
         currentDestIndex += 1
         if (currentDestIndex == currentDestNum) changeVertex = true
-
-        if(offset > self.curAddress) {
-          println("!!!!!!offset is "+offset+"  curAddrss is "+curAddress)
-        }
           val destId = UNSAFE.getInt(offset)
           offset += 4
 
