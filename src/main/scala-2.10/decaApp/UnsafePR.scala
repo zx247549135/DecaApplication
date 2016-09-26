@@ -106,8 +106,6 @@ class UnsafeEdge (size: Int = 4196){self =>
           val destId = UNSAFE.getInt(offset)
           offset += 4
 
-          println("offset!!!!!!"+offset)
-
           (destId, currentContrib)
 
       }
@@ -164,6 +162,8 @@ object UnsafePR{
         val chunk = EIter.next()
         chunk.getMessageIterator(VIter)
       }
+
+      contribs.count()
 
       //println("contribs finished!!!!!!!!!!!!!")
       ranks = contribs.reduceByKey(cachedEdges.partitioner.get, _ + _).asInstanceOf[ShuffledRDD[Int, _, _]].
