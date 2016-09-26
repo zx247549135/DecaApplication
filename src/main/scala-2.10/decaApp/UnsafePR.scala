@@ -186,7 +186,7 @@ object UnsafePR{
 
     //Logger.getRootLogger.setLevel(Level.FATAL)
 
-    val lines = spark.textFile(args(0))
+    val lines = spark.textFile(args(0)).repartition(100)
     val links = lines.map { s =>
       val parts = s.split("\\s+")
       (parts(0).toInt, parts(1).toInt)
