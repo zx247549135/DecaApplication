@@ -70,7 +70,7 @@ class UnsafeEdge (size: Int = 4196){self =>
 
     private def matchVertices(): Boolean = {
       assert(changeVertex)
-      if(offset >= self.curAddress) return false
+      if(offset >= self.curAddress-1000) return false
 
       var matched = false
       while (!matched && vertices.hasNext) {
@@ -80,7 +80,7 @@ class UnsafeEdge (size: Int = 4196){self =>
           val numDests = UNSAFE.getInt(offset)
           offset += 4 + 4 * numDests
 
-          if (offset >= self.curAddress) return false
+          if (offset >= self.curAddress-1000) return false
         }
 
 
@@ -137,10 +137,9 @@ object UnsafePR{
         realSize += 2
         realSize += dests.size
       }
-      var chunk:UnsafeEdge = null
-      synchronized {
-       chunk = new UnsafeEdge(realSize * 4)
-    }
+
+      val chunk = new UnsafeEdge(realSize * 4)
+
       for ((src, dests) <- iter) {
         chunk.writeInt(src)
         chunk.writeInt(dests.size)
