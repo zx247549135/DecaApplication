@@ -82,6 +82,9 @@ class UnsafeEdge (size: Int = 4196){self =>
 
           if (offset >= self.curAddress) return false
         }
+
+
+
         if (currentVertex._1 == UNSAFE.getInt(offset)) {
           matched = true
           offset += 4
@@ -130,11 +133,14 @@ object UnsafePR{
     val cachedEdges = groupedEdges.mapPartitions ( iter2 => {
       val (iter1, iter) = iter2.duplicate
       var realSize = 0
-      for((src, dests) <- iter1){
+      for ((src, dests) <- iter1) {
         realSize += 2
         realSize += dests.size
       }
-      val chunk = new UnsafeEdge(realSize * 4)
+      var chunk:UnsafeEdge = null
+      synchronized {
+       chunk = new UnsafeEdge(realSize * 4)
+    }
       for ((src, dests) <- iter) {
         chunk.writeInt(src)
         chunk.writeInt(dests.size)
@@ -186,7 +192,7 @@ object UnsafePR{
 
     //Logger.getRootLogger.setLevel(Level.FATAL)
 
-    val lines = spark.textFile(args(0)).repartition(1000)
+    val lines = spark.textFile(args(0))
     val links = lines.map { s =>
       val parts = s.split("\\s+")
       (parts(0).toInt, parts(1).toInt)
