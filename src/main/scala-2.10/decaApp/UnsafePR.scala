@@ -155,7 +155,9 @@ object UnsafePR{
 
     var ranks = initRanks
 
-    //println("initRanks finished!!!!!!!!!!!!!")
+    ranks.foreach(_ => Unit)
+
+    println("initRanks finished!!!!!!!!!!!!!")
 
     for (i <- 1 to iters) {
       val contribs = cachedEdges.zipPartitions(ranks) { (EIter, VIter) =>
@@ -163,14 +165,15 @@ object UnsafePR{
         chunk.getMessageIterator(VIter)
       }
 
-      contribs.count()
+      contribs.foreach(_ => Unit)
 
-      //println("contribs finished!!!!!!!!!!!!!")
+      println("contribs finished!!!!!!!!!!!!!")
       ranks = contribs.reduceByKey(cachedEdges.partitioner.get, _ + _).asInstanceOf[ShuffledRDD[Int, _, _]].
         setKeyOrdering(ordering).
         asInstanceOf[RDD[(Int, Float)]].
         mapValues(0.15f + 0.85f * _)
-      //println("ranks finished!!!!!!!!!!!!!")
+      ranks.foreach(_ => Unit)
+      println("ranks finished!!!!!!!!!!!!!")
     }
     ranks.saveAsTextFile(save)
 
@@ -178,7 +181,7 @@ object UnsafePR{
 
   def main(args: Array[String]) {
     println("directmemory: "+sun.misc.VM.maxDirectMemory())
-    val conf = new SparkConf().setAppName(args(2))
+    val conf = new SparkConf().setAppName(args(2)).setMaster("local")
     val spark = new SparkContext(conf)
 
     //Logger.getRootLogger.setLevel(Level.FATAL)
