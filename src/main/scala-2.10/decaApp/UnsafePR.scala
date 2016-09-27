@@ -84,6 +84,7 @@ class UnsafeEdge (size: Int = 4196){self =>
           offset += 4 + 4 * numDests
         }
 
+        if (offset >= self.curAddress) return false
 
 
         if (currentVertex._1 == UNSAFE.getInt(offset)) {
@@ -91,7 +92,7 @@ class UnsafeEdge (size: Int = 4196){self =>
           offset += 4
           currentDestNum = UNSAFE.getInt(offset)
           offset += 4
-
+          currentDestIndex = 0
           currentContrib = currentVertex._2 / currentDestNum
           changeVertex = false
         }
@@ -108,7 +109,7 @@ class UnsafeEdge (size: Int = 4196){self =>
         currentDestIndex += 1
         if (currentDestIndex == currentDestNum){
           changeVertex = true
-          currentDestIndex = 0
+
         }
           val destId = UNSAFE.getInt(offset)
           offset += 4
