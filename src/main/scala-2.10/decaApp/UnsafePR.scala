@@ -70,7 +70,10 @@ class UnsafeEdge (size: Int = 4196){self =>
 
     private def matchVertices(): Boolean = {
       assert(changeVertex)
-      if(offset >= self.curAddress-1000) return false
+      if(offset >= self.curAddress){
+         // UNSAFE.freeMemory(baseAddress)
+        return false
+      }
 
       var matched = false
       while (!matched && vertices.hasNext) {
@@ -79,8 +82,6 @@ class UnsafeEdge (size: Int = 4196){self =>
           offset += 4
           val numDests = UNSAFE.getInt(offset)
           offset += 4 + 4 * numDests
-
-          if (offset >= self.curAddress-1000) return false
         }
 
 
@@ -90,7 +91,7 @@ class UnsafeEdge (size: Int = 4196){self =>
           offset += 4
           currentDestNum = UNSAFE.getInt(offset)
           offset += 4
-          currentDestIndex = 0
+
           currentContrib = currentVertex._2 / currentDestNum
           changeVertex = false
         }
@@ -105,7 +106,10 @@ class UnsafeEdge (size: Int = 4196){self =>
       if (!hasNext) Iterator.empty.next()
       else {
         currentDestIndex += 1
-        if (currentDestIndex == currentDestNum) changeVertex = true
+        if (currentDestIndex == currentDestNum){
+          changeVertex = true
+          currentDestIndex = 0
+        }
           val destId = UNSAFE.getInt(offset)
           offset += 4
 
@@ -169,15 +173,11 @@ object UnsafePR{
         val chunk = EIter.next()
         chunk.getMessageIterator(VIter)
       }
-
-      contribs.foreach(_ => Unit)
-
       println("contribs finished!!!!!!!!!!!!!")
       ranks = contribs.reduceByKey(cachedEdges.partitioner.get, _ + _).asInstanceOf[ShuffledRDD[Int, _, _]].
         setKeyOrdering(ordering).
         asInstanceOf[RDD[(Int, Float)]].
         mapValues(0.15f + 0.85f * _)
-      ranks.foreach(_ => Unit)
       println("ranks finished!!!!!!!!!!!!!")
     }
     ranks.saveAsTextFile(save)
@@ -186,7 +186,7 @@ object UnsafePR{
 
   def main(args: Array[String]) {
     println("directmemory: "+sun.misc.VM.maxDirectMemory())
-    val conf = new SparkConf().setAppName(args(2))//.setMaster("local")
+    val conf = new SparkConf().setAppName(args(2)).setMaster("local")
     val spark = new SparkContext(conf)
 
     //Logger.getRootLogger.setLevel(Level.FATAL)
