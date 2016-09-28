@@ -14,8 +14,6 @@ class UnsafeEdge (size: Int = 4196) extends Serializable{self =>
   private val baseAddress = UNSAFE.allocateMemory(size)
 
 
-  println("!!!!!!!!!!!!baseAddress is" + baseAddress)
-
   private var curAddress = baseAddress
   def address = baseAddress
   def free:Unit={
@@ -151,7 +149,6 @@ object UnsafePR{
         chunk.writeInt(dests.size)
         dests.foreach(chunk.writeInt)
       }
-      chunk.show()
       Iterator(chunk)
     }, true).cache()
 
@@ -166,21 +163,17 @@ object UnsafePR{
 
     var ranks = initRanks
 
-    ranks.foreach(_ => Unit)
-
-    println("initRanks finished!!!!!!!!!!!!!")
 
     for (i <- 1 to iters) {
       val contribs = cachedEdges.zipPartitions(ranks) { (EIter, VIter) =>
         val chunk = EIter.next()
         chunk.getMessageIterator(VIter)
       }
-      println("contribs finished!!!!!!!!!!!!!")
+
       ranks = contribs.reduceByKey(cachedEdges.partitioner.get, _ + _).asInstanceOf[ShuffledRDD[Int, _, _]].
         setKeyOrdering(ordering).
         asInstanceOf[RDD[(Int, Float)]].
         mapValues(0.15f + 0.85f * _)
-      println("ranks finished!!!!!!!!!!!!!")
     }
     ranks.saveAsTextFile(save)
 
