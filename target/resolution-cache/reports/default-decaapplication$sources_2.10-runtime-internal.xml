@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20160927162100"/>
+		date="20160928114401"/>
 	<dependencies>
 		<module organisation="org.scalanlp" name="breeze-viz_2.10">
 			<revision name="0.11.2" status="release" pubdate="20150327011600" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalanlp.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="136">
@@ -56,10 +56,10 @@
 		</module>
 		<module organisation="com.github.fommil.netlib" name="netlib-native_system-win-i686">
 			<revision name="1.1" status="release" pubdate="20131012064100" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="135">
-				<metadata-artifact status="successful" details="" size="5271" time="727" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-win-i686/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-win-i686/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-win-i686/1.1/netlib-native_system-win-i686-1.1.pom"/>
+				<metadata-artifact status="successful" details="" size="5271" time="737" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-win-i686/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-win-i686/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-win-i686/1.1/netlib-native_system-win-i686-1.1.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="netlib-native_system-win-i686" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1019"/>
+					<artifact name="netlib-native_system-win-i686" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1218"/>
 					<artifact name="netlib-native_system-win-i686" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="86986" time="0" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-win-i686/srcs/netlib-native_system-win-i686-1.1-sources.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-win-i686/1.1/netlib-native_system-win-i686-1.1-sources.jar"/>
 					</artifact>
@@ -68,34 +68,34 @@
 		</module>
 		<module organisation="com.github.fommil.netlib" name="netlib-native_system-win-x86_64">
 			<revision name="1.1" status="release" pubdate="20131012064200" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="134">
-				<metadata-artifact status="successful" details="" size="5130" time="724" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-win-x86_64/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-win-x86_64/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-win-x86_64/1.1/netlib-native_system-win-x86_64-1.1.pom"/>
+				<metadata-artifact status="successful" details="" size="5130" time="730" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-win-x86_64/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-win-x86_64/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-win-x86_64/1.1/netlib-native_system-win-x86_64-1.1.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="netlib-native_system-win-x86_64" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="86986" time="0" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-win-x86_64/srcs/netlib-native_system-win-x86_64-1.1-sources.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-win-x86_64/1.1/netlib-native_system-win-x86_64-1.1-sources.jar"/>
 					</artifact>
-					<artifact name="netlib-native_system-win-x86_64" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1043"/>
+					<artifact name="netlib-native_system-win-x86_64" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1298"/>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.github.fommil.netlib" name="netlib-native_system-linux-armhf">
 			<revision name="1.1" status="release" pubdate="20131012073100" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="133">
-				<metadata-artifact status="successful" details="" size="4780" time="717" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-armhf/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-armhf/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-linux-armhf/1.1/netlib-native_system-linux-armhf-1.1.pom"/>
+				<metadata-artifact status="successful" details="" size="4780" time="730" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-armhf/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-armhf/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-linux-armhf/1.1/netlib-native_system-linux-armhf-1.1.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="netlib-native_system-linux-armhf" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="86987" time="0" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-armhf/srcs/netlib-native_system-linux-armhf-1.1-sources.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-linux-armhf/1.1/netlib-native_system-linux-armhf-1.1-sources.jar"/>
 					</artifact>
-					<artifact name="netlib-native_system-linux-armhf" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1057"/>
+					<artifact name="netlib-native_system-linux-armhf" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="2018"/>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.github.fommil.netlib" name="netlib-native_system-linux-i686">
 			<revision name="1.1" status="release" pubdate="20131012073000" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="132">
-				<metadata-artifact status="successful" details="" size="4869" time="719" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-i686/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-i686/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-linux-i686/1.1/netlib-native_system-linux-i686-1.1.pom"/>
+				<metadata-artifact status="successful" details="" size="4869" time="701" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-i686/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-i686/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-linux-i686/1.1/netlib-native_system-linux-i686-1.1.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="netlib-native_system-linux-i686" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1038"/>
+					<artifact name="netlib-native_system-linux-i686" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="78806"/>
 					<artifact name="netlib-native_system-linux-i686" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="86987" time="0" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-i686/srcs/netlib-native_system-linux-i686-1.1-sources.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-linux-i686/1.1/netlib-native_system-linux-i686-1.1-sources.jar"/>
 					</artifact>
@@ -104,10 +104,10 @@
 		</module>
 		<module organisation="com.github.fommil.netlib" name="netlib-native_system-linux-x86_64">
 			<revision name="1.1" status="release" pubdate="20131012072900" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="131">
-				<metadata-artifact status="successful" details="" size="3930" time="745" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-x86_64/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-x86_64/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-linux-x86_64/1.1/netlib-native_system-linux-x86_64-1.1.pom"/>
+				<metadata-artifact status="successful" details="" size="3930" time="820" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-x86_64/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-x86_64/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-linux-x86_64/1.1/netlib-native_system-linux-x86_64-1.1.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="netlib-native_system-linux-x86_64" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1047"/>
+					<artifact name="netlib-native_system-linux-x86_64" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="2146"/>
 					<artifact name="netlib-native_system-linux-x86_64" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="89748" time="0" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-linux-x86_64/srcs/netlib-native_system-linux-x86_64-1.1-sources.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-linux-x86_64/1.1/netlib-native_system-linux-x86_64-1.1-sources.jar"/>
 					</artifact>
@@ -116,10 +116,10 @@
 		</module>
 		<module organisation="com.github.fommil.netlib" name="netlib-native_system-osx-x86_64">
 			<revision name="1.1" status="release" pubdate="20131012064000" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="129">
-				<metadata-artifact status="successful" details="" size="3912" time="862" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-osx-x86_64/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-osx-x86_64/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-osx-x86_64/1.1/netlib-native_system-osx-x86_64-1.1.pom"/>
+				<metadata-artifact status="successful" details="" size="3912" time="735" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-osx-x86_64/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-osx-x86_64/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-osx-x86_64/1.1/netlib-native_system-osx-x86_64-1.1.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="netlib-native_system-osx-x86_64" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1036"/>
+					<artifact name="netlib-native_system-osx-x86_64" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="78769"/>
 					<artifact name="netlib-native_system-osx-x86_64" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="86986" time="0" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_system-osx-x86_64/srcs/netlib-native_system-osx-x86_64-1.1-sources.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_system-osx-x86_64/1.1/netlib-native_system-osx-x86_64-1.1-sources.jar"/>
 					</artifact>
@@ -128,7 +128,7 @@
 		</module>
 		<module organisation="com.github.fommil.netlib" name="native_system-java">
 			<revision name="1.1" status="release" pubdate="20131012063900" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="130">
-				<metadata-artifact status="successful" details="" size="3988" time="747" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/native_system-java/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/native_system-java/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/native_system-java/1.1/native_system-java-1.1.pom"/>
+				<metadata-artifact status="successful" details="" size="3988" time="739" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/native_system-java/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/native_system-java/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/native_system-java/1.1/native_system-java-1.1.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="native_system-java" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="28200" time="0" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/native_system-java/srcs/native_system-java-1.1-sources.jar">
@@ -142,10 +142,10 @@
 		</module>
 		<module organisation="com.github.fommil.netlib" name="netlib-native_ref-linux-armhf">
 			<revision name="1.1" status="release" pubdate="20131012071600" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="128">
-				<metadata-artifact status="successful" details="" size="3897" time="769" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-armhf/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-armhf/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-linux-armhf/1.1/netlib-native_ref-linux-armhf-1.1.pom"/>
+				<metadata-artifact status="successful" details="" size="3897" time="714" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-armhf/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-armhf/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-linux-armhf/1.1/netlib-native_ref-linux-armhf-1.1.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="netlib-native_ref-linux-armhf" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1032"/>
+					<artifact name="netlib-native_ref-linux-armhf" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1533"/>
 					<artifact name="netlib-native_ref-linux-armhf" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="86855" time="0" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-armhf/srcs/netlib-native_ref-linux-armhf-1.1-sources.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-linux-armhf/1.1/netlib-native_ref-linux-armhf-1.1-sources.jar"/>
 					</artifact>
@@ -154,10 +154,10 @@
 		</module>
 		<module organisation="com.github.fommil.netlib" name="netlib-native_ref-win-i686">
 			<revision name="1.1" status="release" pubdate="20131012063700" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="127">
-				<metadata-artifact status="successful" details="" size="4471" time="770" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-win-i686/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-win-i686/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-win-i686/1.1/netlib-native_ref-win-i686-1.1.pom"/>
+				<metadata-artifact status="successful" details="" size="4471" time="815" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-win-i686/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-win-i686/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-win-i686/1.1/netlib-native_ref-win-i686-1.1.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="netlib-native_ref-win-i686" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1013"/>
+					<artifact name="netlib-native_ref-win-i686" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1353"/>
 					<artifact name="netlib-native_ref-win-i686" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="86854" time="0" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-win-i686/srcs/netlib-native_ref-win-i686-1.1-sources.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-win-i686/1.1/netlib-native_ref-win-i686-1.1-sources.jar"/>
 					</artifact>
@@ -166,55 +166,55 @@
 		</module>
 		<module organisation="com.github.fommil.netlib" name="netlib-native_ref-win-x86_64">
 			<revision name="1.1" status="release" pubdate="20131012063900" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="126">
-				<metadata-artifact status="successful" details="" size="4378" time="781" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-win-x86_64/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-win-x86_64/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-win-x86_64/1.1/netlib-native_ref-win-x86_64-1.1.pom"/>
+				<metadata-artifact status="successful" details="" size="4378" time="760" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-win-x86_64/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-win-x86_64/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-win-x86_64/1.1/netlib-native_ref-win-x86_64-1.1.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="netlib-native_ref-win-x86_64" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="86854" time="0" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-win-x86_64/srcs/netlib-native_ref-win-x86_64-1.1-sources.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-win-x86_64/1.1/netlib-native_ref-win-x86_64-1.1-sources.jar"/>
 					</artifact>
-					<artifact name="netlib-native_ref-win-x86_64" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1061"/>
+					<artifact name="netlib-native_ref-win-x86_64" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1587"/>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.github.fommil.netlib" name="netlib-native_ref-linux-i686">
 			<revision name="1.1" status="release" pubdate="20131012071400" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="125">
-				<metadata-artifact status="successful" details="" size="3739" time="760" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-i686/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-i686/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-linux-i686/1.1/netlib-native_ref-linux-i686-1.1.pom"/>
+				<metadata-artifact status="successful" details="" size="3739" time="709" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-i686/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-i686/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-linux-i686/1.1/netlib-native_ref-linux-i686-1.1.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="netlib-native_ref-linux-i686" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="86855" time="0" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-i686/srcs/netlib-native_ref-linux-i686-1.1-sources.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-linux-i686/1.1/netlib-native_ref-linux-i686-1.1-sources.jar"/>
 					</artifact>
-					<artifact name="netlib-native_ref-linux-i686" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1049"/>
+					<artifact name="netlib-native_ref-linux-i686" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1266"/>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.github.fommil.netlib" name="netlib-native_ref-linux-x86_64">
 			<revision name="1.1" status="release" pubdate="20131012071300" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="124">
-				<metadata-artifact status="successful" details="" size="3309" time="778" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-x86_64/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-x86_64/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-linux-x86_64/1.1/netlib-native_ref-linux-x86_64-1.1.pom"/>
+				<metadata-artifact status="successful" details="" size="3309" time="712" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-x86_64/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-x86_64/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-linux-x86_64/1.1/netlib-native_ref-linux-x86_64-1.1.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="netlib-native_ref-linux-x86_64" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="86855" time="0" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-linux-x86_64/srcs/netlib-native_ref-linux-x86_64-1.1-sources.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-linux-x86_64/1.1/netlib-native_ref-linux-x86_64-1.1-sources.jar"/>
 					</artifact>
-					<artifact name="netlib-native_ref-linux-x86_64" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1015"/>
+					<artifact name="netlib-native_ref-linux-x86_64" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1425"/>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.github.fommil.netlib" name="netlib-native_ref-osx-x86_64">
 			<revision name="1.1" status="release" pubdate="20131012063500" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="121">
-				<metadata-artifact status="successful" details="" size="3620" time="735" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-osx-x86_64/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-osx-x86_64/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-osx-x86_64/1.1/netlib-native_ref-osx-x86_64-1.1.pom"/>
+				<metadata-artifact status="successful" details="" size="3620" time="751" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-osx-x86_64/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-osx-x86_64/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-osx-x86_64/1.1/netlib-native_ref-osx-x86_64-1.1.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="netlib-native_ref-osx-x86_64" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="89373" time="0" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/netlib-native_ref-osx-x86_64/srcs/netlib-native_ref-osx-x86_64-1.1-sources.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/fommil/netlib/netlib-native_ref-osx-x86_64/1.1/netlib-native_ref-osx-x86_64-1.1-sources.jar"/>
 					</artifact>
-					<artifact name="netlib-native_ref-osx-x86_64" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1600"/>
+					<artifact name="netlib-native_ref-osx-x86_64" type="jar" ext="jar" status="failed" details="missing artifact" size="0" time="1872"/>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.github.fommil.netlib" name="native_ref-java">
 			<revision name="1.1" status="release" pubdate="20131012063400" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="122">
-				<metadata-artifact status="successful" details="" size="3973" time="742" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/native_ref-java/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/native_ref-java/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/native_ref-java/1.1/native_ref-java-1.1.pom"/>
+				<metadata-artifact status="successful" details="" size="3973" time="751" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/native_ref-java/ivy-1.1.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/native_ref-java/ivy-1.1.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/native_ref-java/1.1/native_ref-java-1.1.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="native_ref-java" type="jar" ext="jar" status="no" details="" size="54461" time="0" location="/Users/iceke/.ivy2/cache/com.github.fommil.netlib/native_ref-java/jars/native_ref-java-1.1.jar">
@@ -481,7 +481,7 @@
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-mapreduce-client-shuffle">
 			<revision name="2.2.0" status="release" pubdate="20131007143703" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="52">
-				<metadata-artifact status="successful" details="" size="1675" time="780" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-mapreduce-client-shuffle/ivy-2.2.0.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-mapreduce-client-shuffle/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/hadoop/hadoop-mapreduce-client-shuffle/2.2.0/hadoop-mapreduce-client-shuffle-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="1675" time="724" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-mapreduce-client-shuffle/ivy-2.2.0.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-mapreduce-client-shuffle/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/hadoop/hadoop-mapreduce-client-shuffle/2.2.0/hadoop-mapreduce-client-shuffle-2.2.0.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="hadoop-mapreduce-client-shuffle" type="jar" ext="jar" status="no" details="" size="21537" time="0" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-mapreduce-client-shuffle/jars/hadoop-mapreduce-client-shuffle-2.2.0.jar">
@@ -495,7 +495,7 @@
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-yarn-server-nodemanager">
 			<revision name="2.2.0" status="release" pubdate="20131007143538" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="54">
-				<metadata-artifact status="successful" details="" size="7324" time="731" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-server-nodemanager/ivy-2.2.0.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-server-nodemanager/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/hadoop/hadoop-yarn-server-nodemanager/2.2.0/hadoop-yarn-server-nodemanager-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="7324" time="741" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-server-nodemanager/ivy-2.2.0.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-server-nodemanager/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/hadoop/hadoop-yarn-server-nodemanager/2.2.0/hadoop-yarn-server-nodemanager-2.2.0.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="hadoop-yarn-server-nodemanager" type="jar" ext="jar" status="no" details="" size="467638" time="0" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-server-nodemanager/jars/hadoop-yarn-server-nodemanager-2.2.0.jar">
@@ -508,8 +508,8 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-mapreduce-client-common">
-			<revision name="2.2.0" status="release" pubdate="20131007143659" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="30">
-				<metadata-artifact status="successful" details="" size="3273" time="1226" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-mapreduce-client-common/ivy-2.2.0.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-mapreduce-client-common/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/hadoop/hadoop-mapreduce-client-common/2.2.0/hadoop-mapreduce-client-common-2.2.0.pom"/>
+			<revision name="2.2.0" status="release" pubdate="20131007143659" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="30">
+				<metadata-artifact status="successful" details="" size="3273" time="981" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-mapreduce-client-common/ivy-2.2.0.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-mapreduce-client-common/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-common/2.2.0/hadoop-mapreduce-client-common-2.2.0.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="hadoop-mapreduce-client-common" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="244749" time="0" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-mapreduce-client-common/srcs/hadoop-mapreduce-client-common-2.2.0-sources.jar">
@@ -565,7 +565,7 @@
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-yarn-common">
 			<revision name="2.2.0" status="release" pubdate="20131007143515" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="31">
-				<metadata-artifact status="successful" details="" size="5032" time="737" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-common/ivy-2.2.0.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-common/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/hadoop/hadoop-yarn-common/2.2.0/hadoop-yarn-common-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="5032" time="1158" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-common/ivy-2.2.0.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-common/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/hadoop/hadoop-yarn-common/2.2.0/hadoop-yarn-common-2.2.0.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="hadoop-yarn-common" type="jar" ext="jar" status="no" details="" size="1301627" time="0" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-common/jars/hadoop-yarn-common-2.2.0.jar">
@@ -579,7 +579,7 @@
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-yarn-api">
 			<revision name="2.2.0" status="release" pubdate="20131007143452" resolver="jcenter" artresolver="jcenter" homepage="" downloaded="true" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="32">
-				<metadata-artifact status="successful" details="" size="2956" time="719" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-api/ivy-2.2.0.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-api/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/hadoop/hadoop-yarn-api/2.2.0/hadoop-yarn-api-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="2956" time="742" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-api/ivy-2.2.0.xml" searched="true" original-local-location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-api/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/hadoop/hadoop-yarn-api/2.2.0/hadoop-yarn-api-2.2.0.pom"/>
 				<caller organisation="default" name="decaapplication$sources_2.10" conf="optional, compile, runtime, runtime-internal" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="hadoop-yarn-api" type="jar" ext="jar" status="no" details="" size="1158936" time="0" location="/Users/iceke/.ivy2/cache/org.apache.hadoop/hadoop-yarn-api/jars/hadoop-yarn-api-2.2.0.jar">

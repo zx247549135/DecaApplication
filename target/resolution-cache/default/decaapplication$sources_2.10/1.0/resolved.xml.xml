@@ -4,7 +4,7 @@
 		module="decaapplication$sources_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20160927162100"
+		publication="20160928114401"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

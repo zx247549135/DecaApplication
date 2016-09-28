@@ -9,9 +9,10 @@ import org.apache.spark.{SparkContext, SparkConf}
 /**
   * Created by iceke on 16/9/12.
   */
-class UnsafeEdge (size: Int = 4196){self =>
+class UnsafeEdge (size: Int = 4196) extends Serializable{self =>
   import UnsafePR._
   private val baseAddress = UNSAFE.allocateMemory(size)
+
 
   println("!!!!!!!!!!!!baseAddress is" + baseAddress)
 
