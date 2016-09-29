@@ -118,7 +118,7 @@ object DecaPR {
         dests.foreach(dos.writeInt)
       }
       Iterator(chunk)
-    }).cache()
+    },true).cache()
 
     cachedEdges.foreach(_ => Unit)
 
