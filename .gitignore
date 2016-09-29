@@ -32,7 +32,15 @@ dist/*
 lib_managed/
 src_managed/
 project/boot/
-project/plugins/project/
+project/plugins/project/*
+
+/project/target/
+/target/resolution-cache/
+/target/scala-2.10/classes/
+/target/scala-2.10/target/
+/target/streams/
+
+
 
 # Scala-IDE specific
 .scala_dependencies

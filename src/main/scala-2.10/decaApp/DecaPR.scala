@@ -118,14 +118,14 @@ object DecaPR {
         dests.foreach(dos.writeInt)
       }
       Iterator(chunk)
-    }, true).cache()
+    }).cache()
 
     cachedEdges.foreach(_ => Unit)
 
     val initRanks = cachedEdges.mapPartitions( iter => {
       val chunk = iter.next()
       chunk.getInitValueIterator(1.0f)
-    }, true)
+    })
 
     var ranks = initRanks
 

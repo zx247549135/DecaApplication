@@ -150,7 +150,7 @@ object UnsafePR{
         dests.foreach(chunk.writeInt)
       }
       Iterator(chunk)
-    }, true).cache()
+    }).cache()
 
 
 
@@ -159,7 +159,7 @@ object UnsafePR{
     val initRanks = cachedEdges.mapPartitions( iter => {
       val chunk = iter.next()
       chunk.getInitValueIterator(1.0f)
-    }, true)
+    })
 
     var ranks = initRanks
 
