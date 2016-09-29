@@ -34,6 +34,7 @@ src_managed/
 project/boot/
 project/plugins/project/*
 
+/project/project/target/
 /project/target/
 /target/resolution-cache/
 /target/scala-2.10/classes/
